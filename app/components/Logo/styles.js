@@ -10,15 +10,15 @@ export default EStyleSheet.create({
   logo: {
     width: imageWidth,
   },
-  textPrimary: {
+  title: {
     color: '$black',
     fontSize: 28,
     letterSpacing: -0.5,
     fontWeight: '600',
   },
-  textSecondary: {
+  text: {
     color: '$black',
-    fontSize: 16,
+    fontSize: 14,
     letterSpacing: -0.5,
     fontWeight: '400',
   },
