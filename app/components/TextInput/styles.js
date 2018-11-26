@@ -15,6 +15,7 @@ export default EStyleSheet.create({
     height: INPUT_HEIGHT,
     paddingHorizontal: 20,
     color: '$white',
+    alignItems: 'center',
     fontSize: 18,
   },
 });

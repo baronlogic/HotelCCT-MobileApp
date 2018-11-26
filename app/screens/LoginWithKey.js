@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, KeyboardAvoidingView } from 'react-native';
 
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import { KeyInput } from '../components/TextInput';
+import LoginText from '../components/Text/LoginText';
+import KeyButton from '../components/Button/KeyButton';
 
 const INPUT_PLACEHODER = 'Enter your key';
+
+/* const DismissKeyboard = ({ children } =
+  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    {children}
+  </TouchableWithoutFeedback>
+); */
 
 class LoginWithKey extends Component {
   handleChangeText = () => {
@@ -15,13 +23,18 @@ class LoginWithKey extends Component {
   render() {
     return (
       <Container>
-        <StatusBar backgroundColor="blue" barStyle="default" />
-        <Logo />
-        <KeyInput
-          placeholder={INPUT_PLACEHODER}
-          keyboardType="numeric"
-          onChangeText={this.handleChangeText}
-        />
+        <StatusBar backgroundColor="blue" barStyle="dark-content" />
+        <KeyboardAvoidingView behavior="padding">
+          <Logo />
+          <LoginText />
+          <KeyInput
+            placeholder={INPUT_PLACEHODER}
+            placeholderTextColor="white"
+            keyboardType="numeric"
+            onChangeText={this.handleChangeText}
+          />
+          <KeyButton />
+        </KeyboardAvoidingView>
       </Container>
     );
   }
