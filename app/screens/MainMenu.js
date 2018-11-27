@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, Text } from 'react-native';
-import { Header } from 'react-native-elements';
-import { Container } from '../components/Container';
-import { Logo } from '../components/Logo';
-import styles from '../components/Text/styles';
-import WelcomeButton from '../components/Button/WelcomeButton';
+import { StatusBar, View } from 'react-native';
+import { MainMenuHeader } from '../components/Header';
 
 class MainMenu extends Component {
   handleWelcomeButton = () => {
@@ -13,18 +9,10 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <Container>
-        <StatusBar backgroundColor="blue" barStyle="dark-content" />
-        <Header
-          backgroundColor="blue"
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        />
-        <Logo />
-        <Text style={styles.title}>Welcome John Martinez</Text>
-        <WelcomeButton onPress={this.handleWelcomeButton} />
-      </Container>
+      <View>
+        <StatusBar backgroundColor="blue" barStyle="light-content" />
+        <MainMenuHeader />
+      </View>
     );
   }
 }
