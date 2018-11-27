@@ -7,8 +7,12 @@ import WelcomeButton from '../components/Button/WelcomeButton';
 import SwitchLanguage from '../components/Button/SwitchLanguage';
 
 class Welcome extends Component {
-  handleChangeText = () => {
-    console.log('change text');
+  handleWelcomeButton = () => {
+    console.log('PRESSING WELCOME BUTTON');
+  };
+
+  handleSwitchLanguage = () => {
+    console.log('CHANGING LANGUAGE');
   };
 
   render() {
@@ -17,8 +21,8 @@ class Welcome extends Component {
         <StatusBar backgroundColor="blue" barStyle="dark-content" />
         <Logo />
         <Text style={styles.title}>Welcome John Martinez</Text>
-        <WelcomeButton />
-        <SwitchLanguage onPress={this.handleChangeText} text="Switch language" />
+        <WelcomeButton onPress={this.handleWelcomeButton} />
+        <SwitchLanguage onPress={this.handleSwitchLanguage} text="Switch language" />
       </Container>
     );
   }

@@ -16,25 +16,27 @@ const INPUT_PLACEHODER = 'Enter your key';
 ); */
 
 class LoginWithKey extends Component {
-  handleChangeText = () => {
-    console.log('change text');
+  handleKeyButton = () => {
+    console.log('PRESSING KEY BUTTON');
+  };
+
+  handleKeyInput = () => {
+    console.log('WRITING KEY');
   };
 
   render() {
     return (
       <Container>
         <StatusBar backgroundColor="blue" barStyle="dark-content" />
-        <KeyboardAvoidingView behavior="padding">
-          <Logo />
-          <LoginText />
-          <KeyInput
-            placeholder={INPUT_PLACEHODER}
-            placeholderTextColor="white"
-            keyboardType="numeric"
-            onChangeText={this.handleChangeText}
-          />
-          <KeyButton />
-        </KeyboardAvoidingView>
+        <Logo />
+        <LoginText />
+        <KeyInput
+          placeholder={INPUT_PLACEHODER}
+          placeholderTextColor="white"
+          keyboardType="numeric"
+          onChangeText={this.handleKeyInput}
+        />
+        <KeyButton onPress={this.handleKeyButton} />
       </Container>
     );
   }
