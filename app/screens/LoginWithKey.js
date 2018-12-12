@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, KeyboardAvoidingView } from 'react-native';
+import { StatusBar } from 'react-native';
 
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -8,12 +8,7 @@ import LoginText from '../components/Text/LoginText';
 import KeyButton from '../components/Button/KeyButton';
 
 const INPUT_PLACEHODER = 'Enter your key';
-
-/* const DismissKeyboard = ({ children } =
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-    {children}
-  </TouchableWithoutFeedback>
-); */
+const BUTTON_TEXT = 'Enter';
 
 class LoginWithKey extends Component {
   handleKeyButton = () => {
@@ -36,7 +31,7 @@ class LoginWithKey extends Component {
           keyboardType="numeric"
           onChangeText={this.handleKeyInput}
         />
-        <KeyButton onPress={this.handleKeyButton} />
+        <KeyButton title={BUTTON_TEXT} onPress={this.handleKeyButton} />
       </Container>
     );
   }

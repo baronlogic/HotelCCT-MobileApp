@@ -5,7 +5,11 @@ export default EStyleSheet.create({
     backgroundColor: '$darkOrange',
   },
   container: {
-    alignItems: 'center',
+    marginVertical: 20,
+
+  },
+  textButton: {
+    width: '75%',
   },
   wrapper: {
     flexDirection: 'row',
