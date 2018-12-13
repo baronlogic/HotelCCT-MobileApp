@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 
@@ -11,8 +12,13 @@ const INPUT_PLACEHODER = 'Enter your key';
 const BUTTON_TEXT = 'Enter';
 
 class LoginWithKey extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
+
   handleKeyButton = () => {
     console.log('PRESSING KEY BUTTON');
+    this.props.navigation.navigate('Welcome');
   };
 
   handleKeyInput = () => {

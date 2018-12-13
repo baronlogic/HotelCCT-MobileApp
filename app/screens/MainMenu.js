@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
 import { MainMenuHeader } from '../components/Header';
@@ -16,12 +17,17 @@ class MainMenu extends Component {
     collapsed: true,
   };
 
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
+
   toggleExpanded = () => {
     this.setState({ collapsed: !this.state.collapsed });
   };
 
   handleHotelOfferButton = () => {
-    console.log('PRESSING WELCOME BUTTON');
+    console.log('PRESSING HOTEL OFFER BUTTON');
+    this.props.navigation.navigate('HotelOfferMenu', { title: 'HOTEL OFFER' });
   };
 
   handleActivitiesButton = () => {
@@ -40,9 +46,8 @@ class MainMenu extends Component {
     return (
       <View>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <MainMenuHeader title={HEADER_TITLE} />
         <MainMenuCollapsible onPress={this.toggleExpanded} collapsed={this.state.collapsed} />
-        <KeyButton icon="location-city" title={HOTEL_OFFER} />
+        <KeyButton icon="location-city" title={HOTEL_OFFER} onPress={this.handleHotelOfferButton} />
         <KeyButton icon="image" title={ACTIVITIES_IN_AREA} />
         <KeyButton icon="new-releases" title={SPECIAL_OFFER} />
         <KeyButton icon="format-align-right" title={ABOUT_HOTEL} />

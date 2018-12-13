@@ -2,11 +2,10 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
   button: {
-    backgroundColor: '$darkOrange',
+    backgroundColor: '$brown',
   },
   container: {
     marginVertical: 20,
-
   },
   textButton: {
     width: '75%',

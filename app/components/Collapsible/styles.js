@@ -8,7 +8,7 @@ export default EStyleSheet.create({
     marginBottom: 20,
   },
   header: {
-    backgroundColor: '#F15A3B',
+    backgroundColor: '#41311E',
     padding: 20,
   },
   headerText: {
@@ -19,7 +19,7 @@ export default EStyleSheet.create({
   },
   content: {
     padding: 20,
-    backgroundColor: '#FF8747',
+    backgroundColor: '#EF7C2C',
   },
   active: {
     backgroundColor: 'rgba(255,255,255,1)',

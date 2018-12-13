@@ -4,7 +4,7 @@ const INPUT_HEIGHT = 48;
 
 export default EStyleSheet.create({
   container: {
-    backgroundColor: '$lightOrange',
+    backgroundColor: '$orange',
     width: '75%',
     height: INPUT_HEIGHT,
     alignItems: 'center',
