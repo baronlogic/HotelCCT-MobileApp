@@ -7,7 +7,7 @@ const GASTRONOMY = 'Gastronomy';
 const OTHER_SERVICES = 'Other Services';
 const EVENTS = 'Events';
 
-class HotelOfferMenu extends Component {
+class AboutHotelMenu extends Component {
   handleHotelOfferButton = () => {
     console.log('PRESSING WELCOME BUTTON');
   };
@@ -28,12 +28,8 @@ class HotelOfferMenu extends Component {
     return (
       <View>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <KeyButton title={SPA_WELNESS} />
-        <KeyButton title={GASTRONOMY} />
-        <KeyButton title={OTHER_SERVICES} />
-        <KeyButton title={EVENTS} />
       </View>
     );
   }
 }
-export default HotelOfferMenu;
+export default AboutHotelMenu;

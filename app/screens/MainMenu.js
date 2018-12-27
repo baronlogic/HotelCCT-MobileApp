@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
-import { MainMenuHeader } from '../components/Header';
 import { MainMenuCollapsible } from '../components/Collapsible';
 import { KeyButton } from '../components/Button';
 
-const HEADER_TITLE = 'MAIN MENU';
-
 const HOTEL_OFFER = 'Hotel offer';
-const ACTIVITIES_IN_AREA = 'Activites in area';
+const ACTIVITIES_IN_AREA = 'Activities in area';
 const SPECIAL_OFFER = 'Special offer';
 const ABOUT_HOTEL = 'About Hotel';
 
@@ -31,15 +28,18 @@ class MainMenu extends Component {
   };
 
   handleActivitiesButton = () => {
-    console.log('PRESSING KEY BUTTON');
+    console.log('PRESSING ACTIVITIES IN AREA BUTTON');
+    this.props.navigation.navigate('ActivitiesInAreaMenu', { title: 'ACTIVITIES IN AREA' });
   };
 
   handleSpecialOfferButton = () => {
     console.log('PRESSING KEY BUTTON');
+    this.props.navigation.navigate('SpecialOfferMenu', { title: 'SPECIAL OFFER' });
   };
 
   handleAboutButton = () => {
     console.log('PRESSING KEY BUTTON');
+    this.props.navigation.navigate('AboutHotelMenu', { title: 'ABOUT HOTEL' });
   };
 
   render() {
@@ -48,9 +48,13 @@ class MainMenu extends Component {
         <StatusBar backgroundColor="blue" barStyle="light-content" />
         <MainMenuCollapsible onPress={this.toggleExpanded} collapsed={this.state.collapsed} />
         <KeyButton icon="location-city" title={HOTEL_OFFER} onPress={this.handleHotelOfferButton} />
-        <KeyButton icon="image" title={ACTIVITIES_IN_AREA} />
-        <KeyButton icon="new-releases" title={SPECIAL_OFFER} />
-        <KeyButton icon="format-align-right" title={ABOUT_HOTEL} />
+        <KeyButton icon="image" title={ACTIVITIES_IN_AREA} onPress={this.handleActivitiesButton} />
+        <KeyButton
+          icon="new-releases"
+          title={SPECIAL_OFFER}
+          onPress={this.handleSpecialOfferButton}
+        />
+        <KeyButton icon="format-align-right" title={ABOUT_HOTEL} onPress={this.handleAboutButton} />
       </View>
     );
   }
