@@ -1,4 +1,8 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import {
+  createStackNavigator,
+  createBottomTabNavigator,
+  createAppContainer,
+} from 'react-navigation';
 
 import LoginWithKey from '../screens/LoginWithKey';
 import Welcome from '../screens/Welcome';
@@ -7,6 +11,8 @@ import HotelOfferMenu from '../screens/HotelOfferMenu';
 import ActivitiesInAreaMenu from '../screens/ActivitiesInAreaMenu';
 import SpecialOfferMenu from '../screens/SpecialOfferMenu';
 import AboutHotelMenu from '../screens/AboutHotelMenu';
+
+// export const Tabs = createBottomTabNavigator({});
 
 const RootStack = createStackNavigator({
   LoginWithKey: {
