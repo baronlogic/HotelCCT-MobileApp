@@ -18,6 +18,7 @@ class LoginWithKey extends Component {
 
   handleKeyButton = () => {
     console.log('PRESSING KEY BUTTON');
+    // Here goes the logic to validate the key.
     this.props.navigation.navigate('Welcome');
   };
 
