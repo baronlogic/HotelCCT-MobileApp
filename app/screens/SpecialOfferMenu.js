@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
-import { ContainedButton } from '../components/Button';
+import { OthersMenuHeader } from '../components/Header';
 
+const SCREEN_NAME = 'SPECIAL OFFER';
 const SPA_WELNESS = 'SPA & Wellness';
 const GASTRONOMY = 'Gastronomy';
 const OTHER_SERVICES = 'Other Services';
 const EVENTS = 'Events';
 
 class SpecialOfferMenu extends Component {
+  goBack = () => {
+    console.log('PRESSING GO BACK BUTTON');
+    this.props.navigation.goBack();
+  };
+
   handleHotelOfferButton = () => {
     console.log('PRESSING WELCOME BUTTON');
   };
@@ -28,6 +34,7 @@ class SpecialOfferMenu extends Component {
     return (
       <View>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
+        <OthersMenuHeader goBack={this.goBack} title={SCREEN_NAME} />
       </View>
     );
   }

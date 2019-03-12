@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { OthersMenuHeader } from '../components/Header';
+
+const SCREEN_NAME = 'ABOUT HOTEL';
 
 class AboutHotelMenu extends Component {
+  goBack = () => {
+    console.log('PRESSING GO BACK BUTTON');
+    this.props.navigation.goBack();
+  };
+
   handleHotelOfferButton = () => {
     console.log('PRESSING WELCOME BUTTON');
   };
@@ -23,7 +30,7 @@ class AboutHotelMenu extends Component {
     return (
       <View>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <TextInput />
+        <OthersMenuHeader goBack={this.goBack} title={SCREEN_NAME} />
       </View>
     );
   }

@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  createStackNavigator,
-  createBottomTabNavigator,
-  createAppContainer,
-} from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
@@ -103,21 +99,21 @@ const RootStack = createStackNavigator({
   },
   ActivitiesInAreaMenu: {
     screen: ActivitiesInAreaMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerTitle: navigation.state.params.title,
-    }),
+    navigationOptions: {
+      header: () => null,
+    },
   },
   SpecialOfferMenu: {
     screen: SpecialOfferMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerTitle: navigation.state.params.title,
-    }),
+    navigationOptions: {
+      header: () => null,
+    },
   },
   AboutHotelMenu: {
     screen: AboutHotelMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerTitle: navigation.state.params.title,
-    }),
+    navigationOptions: {
+      header: () => null,
+    },
   },
 });
 
