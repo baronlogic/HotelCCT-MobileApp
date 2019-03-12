@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
-import { KeyButton } from '../components/Button';
+import { ContainedButton } from '../components/Button';
 
 const SPA_WELNESS = 'SPA & Wellness';
 const GASTRONOMY = 'Gastronomy';
@@ -28,10 +28,10 @@ class HotelOfferMenu extends Component {
     return (
       <View>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <KeyButton title={SPA_WELNESS} />
-        <KeyButton title={GASTRONOMY} />
-        <KeyButton title={OTHER_SERVICES} />
-        <KeyButton title={EVENTS} />
+        <ContainedButton title={SPA_WELNESS} />
+        <ContainedButton title={GASTRONOMY} />
+        <ContainedButton title={OTHER_SERVICES} />
+        <ContainedButton title={EVENTS} />
       </View>
     );
   }

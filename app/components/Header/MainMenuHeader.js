@@ -1,19 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Header } from 'react-native-elements';
+import { Appbar } from 'react-native-paper';
 import styles from './styles';
 
-const MainMenuHeader = ({ title }) => (
-  <Header
-    backgroundColor={styles.header.backgroundColor}
-    leftComponent={{ icon: 'keyboard-arrow-left', color: 'white', margin: -3 }}
-    centerComponent={{ text: title, style: { color: 'white' } }}
-    rightComponent={{ icon: 'room-service', color: 'white', margin: -3 }}
-  />
+const MainMenuHeader = ({ title, subtitle }) => (
+  <Appbar.Header style={styles.Header}>
+    <Appbar.Content title={title} subtitle={subtitle} />
+  </Appbar.Header>
 );
 
 MainMenuHeader.propTypes = {
   title: PropTypes.string,
+  subtitle: PropTypes.string,
 };
 
 export default MainMenuHeader;

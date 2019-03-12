@@ -1,5 +1,6 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 import Navigator from './config/routes';
 
@@ -12,4 +13,8 @@ EStyleSheet.build({
   $darkOrange: '#F15A3B',
 });
 
-export default () => <Navigator />;
+export default () => (
+  <PaperProvider>
+    <Navigator />
+  </PaperProvider>
+);

@@ -11,11 +11,8 @@ export default EStyleSheet.create({
     marginVertical: 11,
   },
   input: {
-    flex: 1,
-    height: INPUT_HEIGHT,
-    paddingHorizontal: 20,
-    color: '$white',
-    alignItems: 'center',
-    fontSize: 18,
+    width: '70%',
+    marginHorizontal: '15%',
+    alignItems: 'stretch',
   },
 });

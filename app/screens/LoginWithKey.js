@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
-
+import { View, KeyboardAvoidingView } from 'react-native';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import { KeyInput } from '../components/TextInput';
 import LoginText from '../components/Text/LoginText';
-import KeyButton from '../components/Button/KeyButton';
+import ContainedButton from '../components/Button/ContainedButton';
+
+import styles from '../components/Container/styles';
 
 const INPUT_PLACEHODER = 'Enter your key';
 const BUTTON_TEXT = 'Enter';
@@ -28,8 +29,7 @@ class LoginWithKey extends Component {
 
   render() {
     return (
-      <Container>
-        <StatusBar backgroundColor="blue" barStyle="dark-content" />
+      <KeyboardAvoidingView style={styles.containerAround} behavior="padding" enabled>
         <Logo />
         <LoginText />
         <KeyInput
@@ -38,8 +38,8 @@ class LoginWithKey extends Component {
           keyboardType="numeric"
           onChangeText={this.handleKeyInput}
         />
-        <KeyButton title={BUTTON_TEXT} onPress={this.handleKeyButton} />
-      </Container>
+        <ContainedButton title={BUTTON_TEXT} onPress={this.handleKeyButton} />
+      </KeyboardAvoidingView>
     );
   }
 }

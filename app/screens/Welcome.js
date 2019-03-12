@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { StatusBar, Text } from 'react-native';
+import { Text } from 'react-native';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import styles from '../components/Text/styles';
-import WelcomeButton from '../components/Button/WelcomeButton';
-import SwitchLanguage from '../components/Button/SwitchLanguage';
+import TextButton from '../components/Button/TextButton';
+import ContainedButton from '../components/Button/ContainedButton';
+
+const BUTTON_WELCOME = 'Enter';
+const BUTTON_LANGUAGE = 'Switch language';
 
 class Welcome extends Component {
   static propTypes = {
@@ -24,11 +27,10 @@ class Welcome extends Component {
   render() {
     return (
       <Container>
-        <StatusBar backgroundColor="blue" barStyle="dark-content" />
         <Logo />
         <Text style={styles.title}>Welcome John Martinez</Text>
-        <WelcomeButton onPress={this.handleWelcomeButton} />
-        <SwitchLanguage onPress={this.handleSwitchLanguage} text="Switch language" />
+        <ContainedButton title={BUTTON_WELCOME} onPress={this.handleWelcomeButton} />
+        <TextButton title={BUTTON_LANGUAGE} onPress={this.handleSwitchLanguage} />
       </Container>
     );
   }

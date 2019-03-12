@@ -1,21 +1,21 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { StatusBar, View } from 'react-native';
-import { List, FAB, Portal } from 'react-native-paper';
+import { StatusBar } from 'react-native';
+import {
+  List, Button, Paragraph, Dialog, Portal, IconButton,
+} from 'react-native-paper';
 import { Container } from '../components/Container';
-import { MainMenuHeader } from '../components/Header';
-import { ContainedButton, styles } from '../components/Button';
+import { ContainedButton } from '../components/Button';
 
-const SCREEN_NAME = 'MAIN MENU';
 const HOTEL_OFFER = 'Hotel offer';
 const ACTIVITIES_IN_AREA = 'Activities in area';
 const SPECIAL_OFFER = 'Special offer';
 const ABOUT_HOTEL = 'About Hotel';
 
-class MainMenu extends Component {
+class ModalMenu extends Component {
   state = {
     expanded: true,
-    open: false,
+    visible: false,
   };
 
   static propTypes = {
@@ -25,11 +25,6 @@ class MainMenu extends Component {
   listExpanded = () => this.setState({
     expanded: !this.state.expanded,
   });
-
-  goBack = () => {
-    console.log('PRESSING GO BACK BUTTON');
-    this.props.navigation.goBack();
-  };
 
   showDialog = () => this.setState({ visible: true });
 
@@ -57,11 +52,10 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <View>
+      <Container>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <MainMenuHeader goBack={this.goBack} title={SCREEN_NAME} />
         <List.Section>
-          <List.Accordion title="Nearest Attractions">
+          <List.Accordion title="Uncontrolled Accordion">
             <List.Item title="First item" />
             <List.Item title="Second item" />
           </List.Accordion>
@@ -86,44 +80,20 @@ class MainMenu extends Component {
           title={ABOUT_HOTEL}
           onPress={this.handleAboutButton}
         />
+        <IconButton icon="room-service" onPress={this.showDialog} />
         <Portal>
-          <FAB.Group
-            style={styles.fab}
-            open={this.state.open}
-            icon={this.state.open ? 'close' : 'room-service'}
-            actions={[
-              { icon: 'local-taxi', label: 'Taxi', onPress: () => console.log('Pressed email') },
-              {
-                icon: 'chat',
-                label: 'Live chat',
-                onPress: () => console.log('Pressed notifications'),
-              },
-              {
-                icon: 'settings',
-                label: 'Hotel Service',
-                onPress: () => console.log('Pressed star'),
-              },
-              {
-                icon: 'alarm',
-                label: 'Set your alarm',
-                onPress: () => console.log('Pressed notifications'),
-              },
-              {
-                icon: 'local-laundry-service',
-                label: 'Cleaning Service',
-                onPress: () => console.log('Pressed notifications'),
-              },
-            ]}
-            onStateChange={({ open }) => this.setState({ open })}
-            onPress={() => {
-              if (this.state.open) {
-                // do something if the speed dial is open
-              }
-            }}
-          />
+          <Dialog visible={this.state.visible} onDismiss={this.hideDialog}>
+            <Dialog.Title>Alert</Dialog.Title>
+            <Dialog.Content>
+              <Paragraph>This is simple dialog</Paragraph>
+            </Dialog.Content>
+            <Dialog.Actions>
+              <Button onPress={this.hideDialog}>Done</Button>
+            </Dialog.Actions>
+          </Dialog>
         </Portal>
-      </View>
+      </Container>
     );
   }
 }
-export default MainMenu;
+export default ModalMenu;

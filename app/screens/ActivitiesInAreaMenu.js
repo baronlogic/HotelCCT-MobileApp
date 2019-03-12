@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
-import { KeyButton } from '../components/Button';
+import { ContainedButton } from '../components/Button';
 
 const SPA_WELNESS = 'SPA & Wellness';
 const GASTRONOMY = 'Gastronomy';

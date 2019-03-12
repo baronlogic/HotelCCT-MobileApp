@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-class AboutHotelMenu extends Component {
+class Chat extends Component {
   handleHotelOfferButton = () => {
     console.log('PRESSING WELCOME BUTTON');
   };
@@ -28,4 +28,4 @@ class AboutHotelMenu extends Component {
     );
   }
 }
-export default AboutHotelMenu;
+export default Chat;

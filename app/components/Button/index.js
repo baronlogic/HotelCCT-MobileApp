@@ -1,8 +1,8 @@
-import KeyButton from './KeyButton';
-import WelcomeButton from './WelcomeButton';
-import SwitchLanguage from './SwitchLanguage';
+import ContainedButton from './ContainedButton';
+import TextButton from './TextButton';
+import IconOnButton from './IconOnButton';
 import styles from './styles';
 
 export {
-  KeyButton, WelcomeButton, SwitchLanguage, styles,
+  ContainedButton, TextButton, IconOnButton, styles,
 };

@@ -3,7 +3,6 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 export default EStyleSheet.create({
   container: {
     alignItems: 'center',
-    marginLeft: 15,
     width: '93%',
     marginBottom: 20,
   },
