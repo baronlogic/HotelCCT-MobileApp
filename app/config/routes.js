@@ -97,9 +97,9 @@ const RootStack = createStackNavigator({
   },
   HotelOfferMenu: {
     screen: HotelOfferMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerTitle: navigation.state.params.title,
-    }),
+    navigationOptions: {
+      header: () => null,
+    },
   },
   ActivitiesInAreaMenu: {
     screen: ActivitiesInAreaMenu,
