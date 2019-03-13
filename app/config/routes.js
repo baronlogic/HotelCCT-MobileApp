@@ -15,6 +15,7 @@ import SpecialOfferMenu from '../screens/SpecialOfferMenu';
 import AboutHotelMenu from '../screens/AboutHotelMenu';
 
 import SpaAndWellness from '../screens/SpaAndWellness';
+import Gastronomy from '../screens/Gastronomy';
 
 import Contact from '../screens/Contact';
 import Map from '../screens/Map';
@@ -37,6 +38,12 @@ const HomeStack = createStackNavigator({
   },
   SpaAndWellness: {
     screen: SpaAndWellness,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+  Gastronomy: {
+    screen: Gastronomy,
     navigationOptions: {
       header: () => null,
     },

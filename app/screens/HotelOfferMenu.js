@@ -20,8 +20,9 @@ class HotelOfferMenu extends Component {
     this.props.navigation.navigate('SpaAndWellness');
   };
 
-  handleActivitiesButton = () => {
-    console.log('PRESSING KEY BUTTON');
+  handleGastronomyButton = () => {
+    console.log('PRESSING GASTRONOMY BUTTON');
+    this.props.navigation.navigate('Gastronomy');
   };
 
   handleSpecialOfferButton = () => {
@@ -38,7 +39,7 @@ class HotelOfferMenu extends Component {
         <StatusBar backgroundColor="blue" barStyle="light-content" />
         <OthersMenuHeader goBack={this.goBack} title={SCREEN_NAME} />
         <ContainedButton title={SPA_WELNESS} onPress={this.handleSpaAndWellnessButton} />
-        <ContainedButton title={GASTRONOMY} />
+        <ContainedButton title={GASTRONOMY} onPress={this.handleGastronomyButton} />
         <ContainedButton title={OTHER_SERVICES} />
         <ContainedButton title={EVENTS} />
       </View>
