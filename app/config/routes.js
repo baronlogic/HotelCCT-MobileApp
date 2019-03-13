@@ -8,10 +8,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import LoginWithKey from '../screens/LoginWithKey';
 import Welcome from '../screens/Welcome';
 import MainMenu from '../screens/MainMenu';
+
 import HotelOfferMenu from '../screens/HotelOfferMenu';
 import ActivitiesInAreaMenu from '../screens/ActivitiesInAreaMenu';
 import SpecialOfferMenu from '../screens/SpecialOfferMenu';
 import AboutHotelMenu from '../screens/AboutHotelMenu';
+
+import SpaAndWellness from '../screens/SpaAndWellness';
 
 import Contact from '../screens/Contact';
 import Map from '../screens/Map';
@@ -28,6 +31,12 @@ const HomeStack = createStackNavigator({
   },
   HotelOfferMenu: {
     screen: HotelOfferMenu,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+  SpaAndWellness: {
+    screen: SpaAndWellness,
     navigationOptions: {
       header: () => null,
     },
