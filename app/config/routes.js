@@ -19,17 +19,46 @@ import Chat from '../screens/Chat';
 import Rating from '../screens/Rating';
 import Social from '../screens/Social';
 
-const Tabs = createMaterialBottomTabNavigator({
+const HomeStack = createStackNavigator({
   MainMenu: {
     screen: MainMenu,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+  HotelOfferMenu: {
+    screen: HotelOfferMenu,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+  ActivitiesInAreaMenu: {
+    screen: ActivitiesInAreaMenu,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+  SpecialOfferMenu: {
+    screen: SpecialOfferMenu,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+  AboutHotelMenu: {
+    screen: AboutHotelMenu,
+    navigationOptions: {
+      header: () => null,
+    },
+  },
+});
+
+const Tabs = createMaterialBottomTabNavigator({
+  Home: {
+    screen: HomeStack,
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: () => <Icon name="home" size={25} color="#fff" />,
     },
-    /* navigationOptions: ({ navigation }) => ({
-      headerTitle: navigation.state.params.title,
-      headerRight: <IconOnButton icon="room-service" onPress={() => console.log('Pressed')} />,
-    }), */
   },
   Contact: {
     screen: Contact,
@@ -83,34 +112,6 @@ const RootStack = createStackNavigator({
   },
   MainMenu: {
     screen: Tabs,
-    navigationOptions: {
-      header: () => null,
-    },
-    /* navigationOptions: ({ navigation }) => ({
-      headerTitle: navigation.state.params.title,
-      headerRight: <IconOnButton icon="room-service" onPress={() => console.log('Pressed')} />,
-    }), */
-  },
-  HotelOfferMenu: {
-    screen: HotelOfferMenu,
-    navigationOptions: {
-      header: () => null,
-    },
-  },
-  ActivitiesInAreaMenu: {
-    screen: ActivitiesInAreaMenu,
-    navigationOptions: {
-      header: () => null,
-    },
-  },
-  SpecialOfferMenu: {
-    screen: SpecialOfferMenu,
-    navigationOptions: {
-      header: () => null,
-    },
-  },
-  AboutHotelMenu: {
-    screen: AboutHotelMenu,
     navigationOptions: {
       header: () => null,
     },
