@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, View } from 'react-native';
+import { StatusBar, View, ScrollView } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';
 import { OthersMenuHeader } from '../components/Header';
 
@@ -13,7 +13,7 @@ class Gastronomy extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
         <OthersMenuHeader goBack={this.goBack} title={SCREEN_NAME} />
         <Card>
@@ -48,7 +48,7 @@ class Gastronomy extends Component {
             </Paragraph>
           </Card.Content>
         </Card>
-      </View>
+      </ScrollView>
     );
   }
 }
